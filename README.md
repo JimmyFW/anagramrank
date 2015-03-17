@@ -1,9 +1,8 @@
 # anagramrank
 
-Notebook
+Thought Process
 =====
 
-Here are my notes as I was trying to understand the problem.
 
 First I thought about the feasibility of a brute force solution. 20 letter words will generate a max of 20! different anagrams, which is way bigger than sys.maxint. The constraints given (half a second response time) made this approach look grim.
 
@@ -11,11 +10,15 @@ Next I decided to check out the solution space interactively. I made a CLI where
 
 The ordered list reminded me of counting problems we were given in MTH2110 Discrete Math. If I could partition the ordered list in the right way, I would be able to count the number of elements which occurred before the search element. That would give me the index.
 
+Notebook
+=====
+
 Here are some of my notes as I was manually running through test cases (using the given sample words):
 ABAB
+=====
 4 elements, 2 groups
 4!/2!/2! = 6 anagrams total
-AABB
+AABB (sorted)
 
 How many anagrams start with ...
 AA? 1
@@ -42,10 +45,11 @@ done
 
 
 QUESTION
+=====
 8 elements, each unique
 8! anagrams total
 
-EINOQSTU
+EINOQSTU (sorted)
 
 How many anagrams start with ...
 
@@ -78,10 +82,11 @@ total = 24572
 
 
 QUESTIONQ
+=====
 9 elements
 9!/2! anagrams total
 
-EINOQQSTU
+EINOQQSTU (sorted)
 
 How many anagrams start with ...
 
@@ -100,6 +105,7 @@ QT? 7!
 
 
 MISSISSIPPI
+=====
 IIIIMPPSSSS
 
 First letter is M. I comes before M.
