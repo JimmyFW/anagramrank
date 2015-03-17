@@ -114,3 +114,11 @@ Second letter is I. None
 Third letter is S. I,P come before S in the sorted list
 	How many anagrams start with MII? 
 	How many anagrams start with MIP?
+
+Initial approach
+=====
+
+First I solved the problem of ranking only words with no repeating characters.
+
+		#place = sorted_list.index(cur_char)
+		#contributions.append(math.factorial(len(sorted_list)-1)*place)

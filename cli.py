@@ -19,16 +19,13 @@ def histogram(L):
 	d = OrderedDict.fromkeys(L)
 	for key in d:
 		d[key] = L.count(key)
-	for key in d:
-		print "{} | {}".format(key, d[key])
 	return d
 
-if len(sys.argv) == 3 and sys.argv[2] == '--sort':
-	sorted_word = sort_word(word)
-	print histogram(word)
-	print sorted_word
-	print histogram(sort_word(word))
-elif len(sys.argv) == 3 and sys.argv[2] == '--gunique':
+def print_histogram(d):
+	for key in d:
+		print "{} | {}".format(key, d[key])
+
+def rank_anagram(word):
 	sorted_list = list(sort_word(word))
 	contributions = []
 	for i in range(0,wordlen):
@@ -39,7 +36,7 @@ elif len(sys.argv) == 3 and sys.argv[2] == '--gunique':
 		# which letters in the histogram come before M?
 		hist = histogram(sorted_list)
 		histkeys = list(hist.keys())
-		print histkeys
+		print "Unused characters " + str(histkeys)
 		frequencies = hist.values()
 
 		for j in range(0,histkeys.index(cur_char)):
@@ -52,22 +49,22 @@ elif len(sys.argv) == 3 and sys.argv[2] == '--gunique':
 				contribution /= divisor
 			print "\t" + str(listlen-1) + " / " + str(modified_frequencies)
 			contributions.append(contribution)
-
-
-		
 		sorted_list.remove(cur_char)
 
-		#place = sorted_list.index(cur_char)
-		#contributions.append(math.factorial(len(sorted_list)-1)*place)
 	print contributions
-	print sum(contributions) + 1
+	return sum(contributions) + 1
 
-	# get index i_1 of first char
-	# contribute math.factorial(wordlen-1)*(i_1-1)
-	# get index i_2 of second char
-	# contribute math.factorial(i_2 - 1)
-	# . . .
-else:
+if len(sys.argv) == 3 and sys.argv[2] == '--sort':
+	sorted_word = sort_word(word)
+	hist = histogram(sort_word(word))
+	print sorted_word
+	print_histogram(hist)
+elif len(sys.argv) == 3 and sys.argv[2] == '--rank':
+
+	rank = rank_anagram(word)
+	print rank
+
+elif len(sys.argv) == 3 and sys.argv[2] == '--brute':
 	permlistobj = itertools.permutations(word) # not allowed to use permutations
 	#permlist = []
 	permset = Set([])
@@ -82,4 +79,6 @@ else:
 	permlist.sort() # update sort function to be more domain specific
 	pprint.pprint(permlist[:50])
 	print permlist.index(word) + 1
+else:
+	print "Options are: --sort, --rank, and --brute"
 
