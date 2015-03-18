@@ -45,6 +45,15 @@ Note 1: I didn't have a way to brute force the solution for strings of 20 letter
 
 Note 2: It turns out that python automatically switches between 32-bit integers and bignums, so the program can handle 20 letter input words with no problem.
 
+The Algorithm
+=====
+The algorithm relies on four data structures:
+1. sorted_list, which is a list of the input word letters sorted alphabetically
+2. histkeys, which is a list of the input word letters without duplicates, sorted alphabetically
+3. frequencies, which is a list of counts of letter occurrence in the input word, where the count index matches with the letter's index in histkeys
+4. contributions, which is a list of ints which, when summed, give the anagram rank of the input word
+
+
 Thought Process
 =====
 
