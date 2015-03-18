@@ -27,6 +27,7 @@ You can also time the calculation.
     1 milliseconds elapsed.
 
 It also comes with the option to attempt to brute force the problem by generating the whole list, sorting that list, and searching for the word within the list. it will print the first 50 elements of that list, and then print the index.
+
     > python cli.py bookkeeper --brute50
     ['beeekkoopr',
      'beeekkoorp',
