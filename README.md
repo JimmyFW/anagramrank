@@ -148,8 +148,16 @@ How many anagrams start with ...
 IIIIMPPSSSS
 
 First letter is M. I comes before M.
-    How many anagrams start with I? 10!/4!/2!/3!
+How many anagrams start with I?
+
+    10!/4!/2!/3!
 Second letter is I. None
 Third letter is S. I,P come before S in the sorted list
-    How many anagrams start with MII? 8!/2!/2!/4!
-    How many anagrams start with MIP? 8!/3!/1!/4!
+
+How many anagrams start with MII?
+
+    8!/2!/2!/4!
+
+How many anagrams start with MIP?
+
+    8!/3!/1!/4!
