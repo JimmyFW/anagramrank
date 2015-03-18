@@ -6,7 +6,7 @@ Instructions
 Included in this submission are three files: anagrams.py, cli.py, and test.py.
 
 ## anagrams.py
-anagrams.py is a collection of functions, including anagram_rank(word), which is an algorithm which computes the index of a word within the alphabetically sorted list of all of that word's anagrams
+anagrams.py is a collection of functions, including anagram_rank(word), which is an algorithm which computes the index of a word within the alphabetically sorted list of all of that word's anagrams. To see a printout of all of the steps used in calculating the result, simply go into anagrams.py, and set verbose = 1. Otherwise leave it as 0.
 
 ## cli.py
 cli.py is a command line interface. Its usage is as follows:
@@ -49,11 +49,16 @@ The Algorithm
 =====
 The algorithm relies on four data structures:
 
-1. sorted_list, which is a list of the input word letters sorted alphabetically
+1. sorted_list, which is a list of the input word letters sorted alphabetically. Letters are popped off from the front of sorted_list as the algorithm accounts for the number of anagrams contributed by these letters.
 2. histkeys, which is a list of the input word letters without duplicates, sorted alphabetically
 3. frequencies, which is a list of counts of letter occurrence in the input word, where the count index matches with the letter's index in histkeys
 4. contributions, which is a list of ints which, when summed, give the anagram rank of the input word
 
+The algorithm essentially counts the number of anagrams which preceeds the input word in the alphabetically sorted anagram list. The multinomial formula allows us to count the permutations of a set of letters with repeating elements.
+
+For example, if we're looking at the input word QUESTION, we know that a bunch of anagrams precede it in the anagram list. Several of these anagrams are prefixed with QUEI. The remaining letters available for permutation are S, T, O, and N. There are 4! ways to permute these letters. Therefore, the "contribution" of this group of anagrams is 4!.
+
+See the "Notebook" section below to see the full calculation trace for the input word QUESTION.
 
 Thought Process
 =====
