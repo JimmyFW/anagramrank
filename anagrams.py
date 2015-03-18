@@ -4,7 +4,10 @@ import pprint
 import math
 from collections import OrderedDict
 
-verbose = 0 # Toggle this to view step-by-step calculations
+# ******* INSTRUCTIONS FOR VERBOSE PRINTING ****
+# Toggle verbose to 1 to view step-by-step calculations
+# To view just the answer, set verbose = 0
+verbose = 0 
 
 if verbose:
 	def verboseprint(*args):
@@ -36,7 +39,9 @@ def rank_anagram(word):
 	wordlen = len(word)
 	sorted_list = list(sort_word(word))
 	contributions = []
+
 	for i in range(0,wordlen):
+
 		cur_char = word[i]
 		verboseprint("Looking at letter: " + cur_char)
 		listlen = len(sorted_list)
