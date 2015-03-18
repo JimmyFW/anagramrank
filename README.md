@@ -1,10 +1,98 @@
 # anagramrank
 
+Instructions
+=====
+
+Included in this submission are three files:
+
+anagrams.py
+=====
+anagrams.py is a collection of functions, including anagram_rank(word), which is an algorithm which computes the index of a word within the alphabetically sorted list of all of that word's anagrams
+
+cli.py
+=====
+cli.py is a command line interface. Its usage is as follows:
+
+    > python cli.py bookkeeper
+    10743
+    
+You can also time the calculation.
+
+    > python cli.py bookkeeperhelloworld --time
+    6349469353074
+    1 milliseconds elapsed.
+
+It also comes with the option to attempt to brute force the problem by generating the whole list, sorting that list, and searching for the word within the list. it will print the first 50 elements of that list, and then print the index.
+    > python cli.py bookkeeper --brute50
+    ['beeekkoopr',
+     'beeekkoorp',
+     'beeekkopor',
+     'beeekkopro',
+     'beeekkorop',
+     'beeekkorpo',
+     'beeekkpoor',
+     'beeekkporo',
+     'beeekkproo',
+     'beeekkroop',
+     'beeekkropo',
+     'beeekkrpoo',
+     'beeekokopr',
+     'beeekokorp',
+     'beeekokpor',
+     'beeekokpro',
+     'beeekokrop',
+     'beeekokrpo',
+     'beeekookpr',
+     'beeekookrp',
+     'beeekoopkr',
+     'beeekooprk',
+     'beeekoorkp',
+     'beeekoorpk',
+     'beeekopkor',
+     'beeekopkro',
+     'beeekopokr',
+     'beeekopork',
+     'beeekoprko',
+     'beeekoprok',
+     'beeekorkop',
+     'beeekorkpo',
+     'beeekorokp',
+     'beeekoropk',
+     'beeekorpko',
+     'beeekorpok',
+     'beeekpkoor',
+     'beeekpkoro',
+     'beeekpkroo',
+     'beeekpokor',
+     'beeekpokro',
+     'beeekpookr',
+     'beeekpoork',
+     'beeekporko',
+     'beeekporok',
+     'beeekprkoo',
+     'beeekproko',
+     'beeekprook',
+     'beeekrkoop',
+     'beeekrkopo']
+    10743
+
+test.py
+=====
+test.py is essentially a unit test suite. I used all of the given examples in this test suite, as well as some results that I brute force computed.
+
+The tests include: empty string, a string of 20 d's, and the string "twentysixle".
+
+    python test.py
+
+Note 1: I didn't have a way to brute force the solution for strings of 20 letters, but an answer is given well under 500 milliseconds (more like 1 or 2 milliseconds)
+
+Note 2: It turns out that python automatically switches between 32-bit integers and bignums, so the program can handle 20 letter input words with no problem.
+
 Thought Process
 =====
 
 
-First I thought about the feasibility of a brute force solution. 20 letter words will generate a max of 20! different anagrams, which is way bigger than sys.maxint. The constraints given (half a second response time) made this approach look grim.
+First I thought about the feasibility of a brute force solution. 20 letter words will generate a max of 20! different anagrams. The constraints given (half a second response time) made this approach look grim.
 
 Next I decided to check out the solution space interactively. I made a CLI where, if you gave it a word with no arguments, it would simply spit out all anagrams of that word in order.
 
@@ -114,11 +202,3 @@ Second letter is I. None
 Third letter is S. I,P come before S in the sorted list
 	How many anagrams start with MII? 
 	How many anagrams start with MIP?
-
-Initial approach
-=====
-
-First I solved the problem of ranking only words with no repeating characters.
-
-		#place = sorted_list.index(cur_char)
-		#contributions.append(math.factorial(len(sorted_list)-1)*place)
