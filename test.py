@@ -30,5 +30,30 @@ class TestRankingFunction(unittest.TestCase):
 		rank = anagrams.rank_anagram("nonintuitiveness")
 		self.assertTrue(rank == 8222334634)
 
+	def test_dddddddddddddddddddddddddd(self):
+		rank = anagrams.rank_anagram("dddddddddddddddddddddddddd")
+		self.assertTrue(rank == 1)
+
+	def test_twentysix(self):
+		rank = anagrams.rank_anagram("twentysix")
+		self.assertTrue(rank == 106029)
+
+	def test_twentysixl(self):
+		rank = anagrams.rank_anagram("twentysixl")
+		self.assertTrue(rank == 1151030)
+
+	def test_twentysixle(self):
+		rank = anagrams.rank_anagram("twentysixle")
+		self.assertTrue(rank == 6731964)
+
+	def test_dddddddddda(self):
+		rank = anagrams.rank_anagram("dddddddddda")
+		self.assertTrue(rank == 11)
+
+	def test_none(self):
+		print "hi"
+		rank = anagrams.rank_anagram("")
+		self.assertTrue(rank == 1)
+
 if __name__ == '__main__':
     unittest.main()

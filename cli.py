@@ -7,7 +7,6 @@ if __name__ == '__main__':
 
 	try:
 		word = sys.argv[1]
-		print word
 	except IndexError:
 		print "Not enough arguments"
 		raise
@@ -34,6 +33,6 @@ if __name__ == '__main__':
 		pprint.pprint(permlist[:50])
 		print permlist.index(word) + 1
 
-	else: # default behavior is to find the rank algorithmically
+	else: # default behavior is to find the rank
 		rank = rank_anagram(word)
 		print rank
