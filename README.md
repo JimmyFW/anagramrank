@@ -147,19 +147,18 @@ How many anagrams start with ...
 ### MISSISSIPPI
 IIIIMPPSSSS
 
-#### M
-First letter is M.
+#### First letter is M.
 
 Only I comes before M in sorted_list.
 
 How many anagrams start with I?
 
     10!/4!/2!/3!
-Second letter is I.
+####Second letter is I.
 
 Nothing comes before I in sorted_list, so we're done
 
-Third letter is S.
+####Third letter is S.
 
 I,P come before S in sorted_list
 
