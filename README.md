@@ -3,14 +3,12 @@
 Instructions
 =====
 
-Included in this submission are three files:
+Included in this submission are three files: anagrams.py, cli.py, and test.py.
 
-anagrams.py
-=====
+## anagrams.py
 anagrams.py is a collection of functions, including anagram_rank(word), which is an algorithm which computes the index of a word within the alphabetically sorted list of all of that word's anagrams
 
-cli.py
-=====
+## cli.py
 cli.py is a command line interface. Its usage is as follows:
 
     > python cli.py bookkeeper
@@ -28,56 +26,15 @@ It also comes with the option to attempt to brute force the problem by generatin
      'beeekkoorp',
      'beeekkopor',
      'beeekkopro',
-     'beeekkorop',
-     'beeekkorpo',
-     'beeekkpoor',
-     'beeekkporo',
-     'beeekkproo',
-     'beeekkroop',
-     'beeekkropo',
-     'beeekkrpoo',
-     'beeekokopr',
-     'beeekokorp',
-     'beeekokpor',
-     'beeekokpro',
-     'beeekokrop',
-     'beeekokrpo',
-     'beeekookpr',
-     'beeekookrp',
-     'beeekoopkr',
-     'beeekooprk',
-     'beeekoorkp',
-     'beeekoorpk',
-     'beeekopkor',
-     'beeekopkro',
-     'beeekopokr',
-     'beeekopork',
-     'beeekoprko',
-     'beeekoprok',
-     'beeekorkop',
-     'beeekorkpo',
-     'beeekorokp',
-     'beeekoropk',
-     'beeekorpko',
-     'beeekorpok',
-     'beeekpkoor',
-     'beeekpkoro',
-     'beeekpkroo',
-     'beeekpokor',
-     'beeekpokro',
-     'beeekpookr',
-     'beeekpoork',
-     'beeekporko',
-     'beeekporok',
-     'beeekprkoo',
-     'beeekproko',
+     .
+     .
+     .
      'beeekprook',
      'beeekrkoop',
      'beeekrkopo']
     10743
 
-test.py
-=====
+## test.py
 test.py is essentially a unit test suite. I used all of the given examples in this test suite, as well as some results that I brute force computed.
 
 The tests include: empty string, a string of 20 d's, and the string "twentysixle".
@@ -102,8 +59,7 @@ Notebook
 =====
 
 Here are some of my notes as I was manually running through test cases (using the given sample words):
-ABAB
-=====
+### ABAB
 4 elements, 2 groups
 4!/2!/2! = 6 anagrams total
 AABB (sorted)
@@ -132,8 +88,7 @@ fourth letter of word is B
 done
 
 
-QUESTION
-=====
+### QUESTION
 8 elements, each unique
 8! anagrams total
 
@@ -169,8 +124,7 @@ total = 24572
 
 
 
-QUESTIONQ
-=====
+### QUESTIONQ
 9 elements
 9!/2! anagrams total
 
@@ -192,8 +146,7 @@ QS? 7!
 QT? 7!
 
 
-MISSISSIPPI
-=====
+### MISSISSIPPI
 IIIIMPPSSSS
 
 First letter is M. I comes before M.
