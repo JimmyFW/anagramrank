@@ -85,34 +85,6 @@ Notebook
 =====
 
 Here are some of my notes as I was manually running through test cases (using the given sample words):
-### ABAB
-4 elements, 2 groups
-4!/2!/2! = 6 anagrams total
-AABB (sorted)
-
-How many anagrams start with ...
-AA? 1
-ABAB? 1
-
-total = 2
-
-diff approach ...
-first letter of word is A
-	place of A is 0 in AABB
-		so we move on
-second letter of word is B
-	place of B is 1 in ABB
-		so we account for the case AA, and it turns out there is only one anagram which starts with AA
-		this is true because we run the hypothetical:
-			assuming we've used up the letters AA, how many ways are there to arrange the remaining letters?
-third letter of word is A
-	place of A is 0 in AB
-		so we move on
-fourth letter of word is B
-	place of B is 0 in B
-		so we move on
-done
-
 
 ### QUESTION
 8 elements, each unique
@@ -122,29 +94,29 @@ EINOQSTU (sorted)
 
 How many anagrams start with ...
 
-E? 7!
-I? 7!
-N? 7!
-O? 7!
+    E? 7!
+    I? 7!
+    N? 7!
+    O? 7!
 
-QE? 6!
-QI? 6!
-QN? 6!
-QO? 6!
-QS? 6!
-QT? 6!
+    QE? 6!
+    QI? 6!
+    QN? 6!
+    QO? 6!
+    QS? 6!
+    QT? 6!
 
-QUEI? 4!
-QUEN? 4!
-QUEO? 4!
+    QUEI? 4!
+    QUEN? 4!
+    QUEO? 4!
 
-QUESI? 3!
-QUESN? 3!
-QUESO? 3!
+    QUESI? 3!
+    QUESN? 3!
+    QUESO? 3!
 
-QUESTIN? 2!
+    QUESTIN? 2!
 
-QUESTION? 1
+    QUESTION? 1
 
 total = 24572
 
