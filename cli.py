@@ -2,6 +2,7 @@ import sys
 import anagrams
 import pprint
 from anagrams import rank_anagram
+import time
 
 if __name__ == '__main__':
 
@@ -10,8 +11,6 @@ if __name__ == '__main__':
 	except IndexError:
 		print "Not enough arguments"
 		raise
-
-	# takes a word, sorts its characters a-z, prints a histogram of the characters
 
 	if len(sys.argv) == 3 and sys.argv[2] == '--help':
 		print "Options are: --sort and --brute50"
@@ -32,6 +31,13 @@ if __name__ == '__main__':
 		permlist = anagrams.generate_anagrams(word)
 		pprint.pprint(permlist[:50])
 		print permlist.index(word) + 1
+
+	elif len(sys.argv) == 3 and sys.argv[2] == '--time':
+		start = int(round(time.time() * 1000))
+		rank = rank_anagram(word)
+		end = int(round(time.time() * 1000))
+		print rank
+		print str(end-start) + " milliseconds elapsed."
 
 	else: # default behavior is to find the rank
 		rank = rank_anagram(word)

@@ -37,11 +37,10 @@ def rank_anagram(word):
 	sorted_list = list(sort_word(word))
 	contributions = []
 	for i in range(0,wordlen):
-		cur_char = word[i] # first letter is M
+		cur_char = word[i]
 		verboseprint("Looking at letter: " + cur_char)
 		listlen = len(sorted_list)
 
-		# which letters in the histogram come before M?
 		hist = histogram(sorted_list)
 		histkeys = list(hist.keys())
 		verboseprint("Unused characters " + str(histkeys))
@@ -60,8 +59,7 @@ def rank_anagram(word):
 		sorted_list.remove(cur_char)
 
 	verboseprint(contributions)
-	print sum(contributions) + 1
-	return sum(contributions) + 1
+	return sum(contributions) + 1 # add 1 since python is zero-indexed
 
 def generate_anagrams(word):
 	permlistobj = itertools.permutations(word)
