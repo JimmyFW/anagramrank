@@ -130,26 +130,26 @@ EINOQQSTU (sorted)
 
 How many anagrams start with ...
 
-E? 8!/2!
-I? 8!/2!
-N? 8!/2!
-O? 8!/2!
+    E? 8!/2!
+    I? 8!/2!
+    N? 8!/2!
+    O? 8!/2!
 
-QE? 7!
-QI? 7!
-QN? 7!
-QO? 7!
-QQ? 7!
-QS? 7!
-QT? 7!
+    QE? 7!
+    QI? 7!
+    QN? 7!
+    QO? 7!
+    QQ? 7!
+    QS? 7!
+    QT? 7!
 
 
 ### MISSISSIPPI
 IIIIMPPSSSS
 
 First letter is M. I comes before M.
-	How many anagrams start with I? 10!/4!/2!/3!
+    How many anagrams start with I? 10!/4!/2!/3!
 Second letter is I. None
 Third letter is S. I,P come before S in the sorted list
-	How many anagrams start with MII? 
-	How many anagrams start with MIP?
+    How many anagrams start with MII? 8!/2!/2!/4!
+    How many anagrams start with MIP? 8!/3!/1!/4!
