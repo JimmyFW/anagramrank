@@ -46,7 +46,11 @@ test.py is essentially a unit test suite. I used all of the given examples in th
 
 The tests include: empty string, a string of 20 d's, and the string "twentysixle".
 
-    python test.py
+    > python test.py
+    ............
+    ----------------------------------------------------------------------
+    Ran 12 tests in 0.005s
+    OK
 
 Note 1: I didn't have a way to brute force the solution for strings of 20 letters, but an answer is given well under 500 milliseconds (more like 1 or 2 milliseconds)
 
