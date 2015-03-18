@@ -8,7 +8,9 @@ Included in this submission are three files: anagrams.py, cli.py, and test.py.
 ## anagrams.py
 anagrams.py is a collection of functions, including anagram_rank(word), which is an algorithm which computes the index of a word within the alphabetically sorted list of all of that word's anagrams.
 
-NOTE: To see a printout of all of the steps used in calculating the result, simply go into anagrams.py, and set verbose = 1. Otherwise leave it as 0.
+NOTE: To see a printout of all of the steps used in calculating the result, simply go into anagrams.py, and set
+    verbose = 1
+Otherwise leave it as 0.
 
 ## cli.py
 cli.py is a command line interface. Its usage is as follows:
